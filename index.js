@@ -37,7 +37,7 @@
 // -- info () - яка виводить всю інформацію про автомобіль
 // -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
-// -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і доавляет його в поточний об'єкт car
+// -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і доавляет його в поточний об'єкт car----НЕЗНАЮ
 // let car = {
 //     model: 'x',
 //     firma:'y',
@@ -82,7 +82,7 @@
 // -- info () - яка виводить всю інформацію про автомобіль
 // -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
-// -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і доавляет його в поточний об'єкт car
+// -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і доавляет його в поточний об'єкт car----НЕЗНАЮ
 // ==============================================
 // function Car(model, firma, year, maxSpeed, engine){
 //     this.model = model;
@@ -169,49 +169,90 @@
 // VW.changeYear();
 // VW.addDriver();
 
-//-створити класс попелюшка з полями ім'я, вік, розмір ноги
+// -створити класс попелюшка з полями ім'я, вік, розмір ноги
 // --Створити 10 попелюшок , покласти їх в масив
 // --Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
 // -- за допоиоги циклу знайти яка попелюшка повинна бути з принцом
-// ==============================================
+// class Popelushka{
+//     constructor(name,age,size) {
+//         this.name = name;
+//         this.age = age
+//         this.size = size;
+//     }
+// }
+// p1 = new Popelushka('Name1', 21,31);
+// p2 = new Popelushka('Name2', 22,32);
+// p3 = new Popelushka('Name3', 23,33);
+// p4 = new Popelushka('Name4', 24,34);
+// p5 = new Popelushka('Name5', 25,35);
+// p6 = new Popelushka('Name6', 26,36);
+// p7 = new Popelushka('Name7', 27,37);
+// p8 = new Popelushka('Name8', 28,38);
+// p9 = new Popelushka('Name9', 29,39);
+// p10 = new Popelushka('Name10', 30,40);
 //
-class Popelushka{
-    constructor(name,age,sizeLasty) {
-        this.name = name;
-        this.age = age;
-        this.sizeLasty = sizeLasty;
-    }
-}
-p1 = new Popelushka('Name1',21,32)
-p2 = new Popelushka('Name2',22,33)
-p3 = new Popelushka('Name3',23,34)
-p4 = new Popelushka('Name4',24,35)
-p5 = new Popelushka('Name5',25,36)
-p6 = new Popelushka('Name6',26,37)
-p7 = new Popelushka('Name7',27,38)
-p8 = new Popelushka('Name8',28,39)
-p9 = new Popelushka('Name9',29,40)
-p10 = new Popelushka('Name10',10,41)
+// class Prince{
+//     constructor(name,age,sizeSearch) {
+//         this.name = name;
+//         this.age = age;
+//         this.sizeSearch = sizeSearch;
+//     }
+// }
+// prince = new Prince('Ashot',40,34);
+//
+// let escort = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10]
+//
+// function search(){
+//     let  i = 0;
+//         while (i<escort.length){
+//             let elements = Object.values(escort[i]);
+//             i++
+//             if (elements[2] === prince.sizeSearch){
+//                 console.log(elements[0] + ' must be with ' + prince.name)
+//             }
+//         }
+// }
+// search();
+//
 
-class Prince{
-    constructor(name,age,sizeMeshta) {
-        this.name = name;
-        this.age = age;
-        this.sizeMeshta = sizeMeshta;
-    }
-}
-prince1 = new Prince('Oleg', 24, 40);
-
-let popeluh = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10];
-function search(){
-        let  i = 0;
-        while (i<popeluh.length){
-            let elements = Object.values(popeluh[i]);
-            i++
-            if (elements[2] === prince1.sizeMeshta){
-                console.log(elements[0] + ' must be with ' + prince1.name)
-            }
-
-        }
-}
-search();
+//-створити функцію конструктор попелюшка з полями ім'я, вік, розмір ноги
+// --Створити 10 попелюшок , покласти їх в масив
+// --Сторити об'єкт типу "принц" за допомоги функції конструктора з полями ім'я, вік, туфелька яку він знайшов, та функцію "пошук попелюшки"
+// -- функція повинна приймати масив попелюшок, та шукає ту котра йому підходить
+// function Popelushka(name,age,sizeLasty) {
+//         this.name = name;
+//         this.age = age;
+//         this.sizeLasty = sizeLasty;
+// }
+// p1 = new Popelushka('Name1',21,32)
+// p2 = new Popelushka('Name2',22,33)
+// p3 = new Popelushka('Name3',23,34)
+// p4 = new Popelushka('Name4',24,35)
+// p5 = new Popelushka('Name5',25,36)
+// p6 = new Popelushka('Name6',26,37)
+// p7 = new Popelushka('Name7',27,38)
+// p8 = new Popelushka('Name8',28,39)
+// p9 = new Popelushka('Name9',29,40)
+// p10 = new Popelushka('Name10',10,41)
+//
+// class Prince{
+//     constructor(name,age,sizeMeshta) {
+//         this.name = name;
+//         this.age = age;
+//         this.sizeMeshta = sizeMeshta;
+//     }
+// }
+// prince1 = new Prince('Oleg', 24, 32);
+//
+// let popeluh = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10];
+// function search(){
+//         let  i = 0;
+//         while (i<popeluh.length){
+//             let elements = Object.values(popeluh[i]);
+//             i++
+//             if (elements[2] === prince1.sizeMeshta){
+//                 console.log(elements[0] + ' must be with ' + prince1.name)
+//             }
+//         }
+// }
+// search();
