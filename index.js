@@ -307,10 +307,10 @@ let massCar = [audi,mercedes,BMW,GWAgen,ford,VW,nissan];
 //         let b = (massCar[i].price + (massCar[i].price * 0.05));
 //         console.log(a)
 //         console.log(b)
-//         i+=2;
+//         i= i+2;
 //     }
 // }
-// console.log(upgrade());
+// upgrade();
 
 // Після того зробити перевірку досвіду ВСІХ наших водіїв. Якщо досвід водія менший за 5 років, але його вік більший за 25, то необідно відправити його на курси підвищення кваліфікації, що збільшить йому досвід на 1 рік.
 // function ageIterator() {
@@ -318,25 +318,28 @@ let massCar = [audi,mercedes,BMW,GWAgen,ford,VW,nissan];
 //         if (car.driver.exp < 5 && car.driver.age > 25) {
 //             console.log(car.driver.name + ' You must study!!' + 'exp: ' + car.driver.exp)
 //             console.log(car.driver.name + ' Will study just wait for professional ^_^')
-//             let study = car.driver.exp +1;
+//             let study = car.driver.exp +=1;
 //             console.log('New exp: ' + study)
 //         }
 //     }
 // }
 // ageIterator();
 // console.log(massCar)
-//
+
 
 //     Також спробуйте порахувати суму, яку потрібно потратити для покупки всіх цих авто в циклі
+let massSum = [];
 function price(){
+    let sum = 0;
     for (let car of massCar) {
         // console.log(car)
-        let sum = car.price;
-        console.log(sum)
-
+        // console.log(car.price)
+        massSum.push(car.price)
         }
+    // console.log(massSum)
+    for (let i = 0; i < massSum.length; i++) {
+       sum+= massSum[i];
+    }
+    console.log(sum)
 }
 price();
-
-
-
