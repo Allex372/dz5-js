@@ -97,18 +97,15 @@
 //     this.info = function (){
 //         console.log('model: ' +  this.model +' '+ 'firma: ' + this.firma +' '+ 'year: ' + this.year +' '+ 'maxSpeed: ' + this.maxSpeed + ' '+'engine: ' + this.engine)
 //     }
-//     this.increaseMaxSpeed = function (){
-//         let newSpeed = 120;
+//     this.increaseMaxSpeed = function (newSpeed){
 //         console.log(this.maxSpeed + newSpeed)
 //     }
-//     this.changeYear = function (){
-//         let newYear = 2022;
+//     this.changeYear = function (newYear){
+//
 //         console.log(this.year = newYear)
 //     }
-//     this.addDriver = function (){
-//         let driver = {
-//             name:'Igor',
-//             age:21 }
+//     this.addDriver = function (driver){
+//           this.driver = driver
 //     }
 //
 // }
@@ -117,9 +114,9 @@
 // console.log(Mazda)
 // Mazda.drive();
 // Mazda.info();
-// Mazda.increaseMaxSpeed();
-// Mazda.changeYear();
-// Mazda.addDriver();
+// Mazda.increaseMaxSpeed(190);
+// Mazda.changeYear(2035);
+// Mazda.addDriver({name:'Petro', age:21});
 // console.log(Mazda)
 
 //- Створити клас який дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
@@ -151,11 +148,8 @@
 //         let newYear = 2025;
 //         console.log(this.year = newYear)
 //     }
-//     addDriver(){
-//             let driver ={
-//                 name:'Allex',
-//                 age:21,
-//             }
+//     addDriver(driver){
+//             this.driver = driver;
 //
 //     }
 //
@@ -167,7 +161,9 @@
 // VW.info();
 // VW.increaseMaxSpeed();
 // VW.changeYear();
-// VW.addDriver();
+// VW.addDriver({name:'Vasil',age:21});
+// console.log(VW)
+
 
 // -створити класс попелюшка з полями ім'я, вік, розмір ноги
 // --Створити 10 попелюшок , покласти їх в масив
@@ -256,3 +252,86 @@
 //         }
 // }
 // search();
+
+// Створити обєкт автомобіля з полями:
+//     Марка автомобля, потужність двигуна, власник, ціна, рік випуску.
+//     Власник автомобіля теж має бути обєкт, у якого є поля
+// Імя, вік, стаж водіння.+
+//     Створити не менше 7 та не більше 20 машинок.
+//     Зробили половину автопарку ремонт мотору, що збільшить потужність автомобілів на 10% (переприсвоєння змінної потужності).
+// На відремонтовані автомобілі найняти нових водіїв (переприсвоїти змінну водій).
+// Для початку вкладіть всі наші створені автомобілі в масив cars.
+//     Далі необхідно рати кожну другу машинку (цикл з кроком в 2), та робити їй підвищення потужності двигуна на 10% та ціну на 5%
+// Після того зробити перевірку досвіду ВСІХ наших водіїв. Якщо досвід водія менший за 5 років, але його вік більший за 25, то необідно відправити його на курси підвищення кваліфікації, що збільшить йому досвід на 1 рік.
+//     Також спробуйте порахувати суму, яку потрібно потратити для покупки всіх цих авто в циклі
+class Car{
+    constructor(marka, engine, driver, price, year) {
+        this.marka = marka;
+        this.engine = engine;
+        this.driver = driver;
+        this.price = price;
+        this.year = year;
+    }
+    newSpeed(up){
+        console.log(this.engine * up);
+    }
+    newDriver(driver){
+        this.driver = driver;
+    }
+}
+audi = new Car('Audi', 2.0, {name:'Oleg',age:31,staje:2}, 2000, 1999);
+mercedes = new Car('Mercedes', 2.5, {name:'Petro',age:22,staje:3}, 3000, 2001);
+BMW = new Car('BMW', 2.5, {name:'Vasil',age:28,staje:4}, 3500, 2000);
+GWAgen = new Car('G-WAGEN', 5.0, {name:'Denis',age:24,staje:5}, 6000, 2005);
+ford = new Car('FORD', 2.0, {name:'Mama',age:25,staje:6}, 2500, 2004);
+VW = new Car('VW', 2.0, {name:'Dady',age:26,staje:7}, 6000, 2014);
+nissan = new Car('NISSAN', 2.5, {name:'Steve',age:27,staje:8}, 4500, 2012);
+
+// audi.newSpeed(2)
+// BMW.newSpeed(2)
+// GWAgen.newSpeed(2)
+// VW.newSpeed(2)
+// audi.newDriver({name:'Petro',age:22,staje:3})
+// BMW.newDriver({name:'Name1',age:99,staje:50})
+// GWAgen.newDriver({name:'Name2', age:98,staje:55})
+// VW.newDriver({name:'Name3', age:97, staje:44})
+
+let massCar = [audi,mercedes,BMW,GWAgen,ford,VW,nissan];
+
+// function upgrade() {
+//     let i = 0;
+//     while (i <= massCar.length) {
+//         console.log(massCar[i]);
+//         let a = (massCar[i].engine + (massCar[i].engine * 0.10));
+//         let b = (massCar[i].price + (massCar[i].price * 0.05));
+//         console.log(a)
+//         console.log(b)
+//         i+=2;
+//     }
+// }
+// console.log(upgrade());
+
+// function ageIterator() {
+//     for (let car of massCar) {
+//         if (car.driver.staje < 5 && car.driver.age > 25) {
+//             console.log(car.driver.name + ' nado na kursy!' + 'staje: ' + car.driver.staje)
+//             let kursu = car.driver.staje +1;
+//             console.log('New staje: ' + kursu)
+//         }
+//     }
+// }
+// console.log(ageIterator())
+
+//     Також спробуйте порахувати суму, яку потрібно потратити для покупки всіх цих авто в циклі
+// function price(){
+//     for (let car of massCar) {
+//         // console.log(car)
+//         let sum = car.price;
+//         // console.log(sum)
+//         let result = car.price[0] + car.price[1];
+//         console.log(result)
+//         }
+// }
+//
+// console.log(price())
+
