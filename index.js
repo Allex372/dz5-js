@@ -265,8 +265,8 @@
 // Після того зробити перевірку досвіду ВСІХ наших водіїв. Якщо досвід водія менший за 5 років, але його вік більший за 25, то необідно відправити його на курси підвищення кваліфікації, що збільшить йому досвід на 1 рік.
 //     Також спробуйте порахувати суму, яку потрібно потратити для покупки всіх цих авто в циклі
 class Car{
-    constructor(marka, engine, driver, price, year) {
-        this.marka = marka;
+    constructor(model, engine, driver, price, year) {
+        this.model = model;
         this.engine = engine;
         this.driver = driver;
         this.price = price;
@@ -279,25 +279,26 @@ class Car{
         this.driver = driver;
     }
 }
-audi = new Car('Audi', 2.0, {name:'Oleg',age:31,staje:2}, 2000, 1999);
-mercedes = new Car('Mercedes', 2.5, {name:'Petro',age:22,staje:3}, 3000, 2001);
-BMW = new Car('BMW', 2.5, {name:'Vasil',age:28,staje:4}, 3500, 2000);
-GWAgen = new Car('G-WAGEN', 5.0, {name:'Denis',age:24,staje:5}, 6000, 2005);
-ford = new Car('FORD', 2.0, {name:'Mama',age:25,staje:6}, 2500, 2004);
-VW = new Car('VW', 2.0, {name:'Dady',age:26,staje:7}, 6000, 2014);
-nissan = new Car('NISSAN', 2.5, {name:'Steve',age:27,staje:8}, 4500, 2012);
+audi = new Car('Audi', 2.0, {name:'Oleg',age:31,exp:2}, 2000, 1999);
+mercedes = new Car('Mercedes', 2.5, {name:'Petro',age:22,exp:3}, 3000, 2001);
+BMW = new Car('BMW', 2.5, {name:'Vasil',age:28,exp:4}, 3500, 2000);
+GWAgen = new Car('G-WAGEN', 5.0, {name:'Denis',age:24,exp:5}, 6000, 2005);
+ford = new Car('FORD', 2.0, {name:'Mama',age:25,exp:6}, 2500, 2004);
+VW = new Car('VW', 2.0, {name:'Dady',age:26,exp:7}, 6000, 2014);
+nissan = new Car('NISSAN', 2.5, {name:'Steve',age:27,exp:8}, 4500, 2012);
 
 // audi.newSpeed(2)
 // BMW.newSpeed(2)
 // GWAgen.newSpeed(2)
 // VW.newSpeed(2)
-// audi.newDriver({name:'Petro',age:22,staje:3})
-// BMW.newDriver({name:'Name1',age:99,staje:50})
-// GWAgen.newDriver({name:'Name2', age:98,staje:55})
-// VW.newDriver({name:'Name3', age:97, staje:44})
+// audi.newDriver({name:'Petro',age:22,exp:3})
+// BMW.newDriver({name:'Name1',age:99,exp:50})
+// GWAgen.newDriver({name:'Name2', age:98,exp:55})
+// VW.newDriver({name:'Name3', age:97, exp:44})
 
 let massCar = [audi,mercedes,BMW,GWAgen,ford,VW,nissan];
 
+//     Далі необхідно рати кожну другу машинку (цикл з кроком в 2), та робити їй підвищення потужності двигуна на 10% та ціну на 5%
 // function upgrade() {
 //     let i = 0;
 //     while (i <= massCar.length) {
@@ -311,27 +312,31 @@ let massCar = [audi,mercedes,BMW,GWAgen,ford,VW,nissan];
 // }
 // console.log(upgrade());
 
+// Після того зробити перевірку досвіду ВСІХ наших водіїв. Якщо досвід водія менший за 5 років, але його вік більший за 25, то необідно відправити його на курси підвищення кваліфікації, що збільшить йому досвід на 1 рік.
 // function ageIterator() {
 //     for (let car of massCar) {
-//         if (car.driver.staje < 5 && car.driver.age > 25) {
-//             console.log(car.driver.name + ' nado na kursy!' + 'staje: ' + car.driver.staje)
-//             let kursu = car.driver.staje +1;
-//             console.log('New staje: ' + kursu)
+//         if (car.driver.exp < 5 && car.driver.age > 25) {
+//             console.log(car.driver.name + ' You must study!!' + 'exp: ' + car.driver.exp)
+//             console.log(car.driver.name + ' Will study just wait for professional ^_^')
+//             let study = car.driver.exp +1;
+//             console.log('New exp: ' + study)
 //         }
 //     }
 // }
-// console.log(ageIterator())
+// ageIterator();
+// console.log(massCar)
+//
 
 //     Також спробуйте порахувати суму, яку потрібно потратити для покупки всіх цих авто в циклі
-// function price(){
-//     for (let car of massCar) {
-//         // console.log(car)
-//         let sum = car.price;
-//         // console.log(sum)
-//         let result = car.price[0] + car.price[1];
-//         console.log(result)
-//         }
-// }
-//
-// console.log(price())
+function price(){
+    for (let car of massCar) {
+        // console.log(car)
+        let sum = car.price;
+        console.log(sum)
+
+        }
+}
+price();
+
+
 
