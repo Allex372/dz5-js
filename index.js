@@ -215,44 +215,52 @@
 // --Створити 10 попелюшок , покласти їх в масив
 // --Сторити об'єкт типу "принц" за допомоги функції конструктора з полями ім'я, вік, туфелька яку він знайшов, та функцію "пошук попелюшки"
 // -- функція повинна приймати масив попелюшок, та шукає ту котра йому підходить
-// function Popelushka(name,age,sizeLasty) {
-//         this.name = name;
-//         this.age = age;
-//         this.sizeLasty = sizeLasty;
-// }
-// p1 = new Popelushka('Name1',21,32)
-// p2 = new Popelushka('Name2',22,33)
-// p3 = new Popelushka('Name3',23,34)
-// p4 = new Popelushka('Name4',24,35)
-// p5 = new Popelushka('Name5',25,36)
-// p6 = new Popelushka('Name6',26,37)
-// p7 = new Popelushka('Name7',27,38)
-// p8 = new Popelushka('Name8',28,39)
-// p9 = new Popelushka('Name9',29,40)
-// p10 = new Popelushka('Name10',10,41)
-//
-// class Prince{
-//     constructor(name,age,sizeMeshta) {
-//         this.name = name;
-//         this.age = age;
-//         this.sizeMeshta = sizeMeshta;
-//     }
-// }
-// prince1 = new Prince('Oleg', 24, 32);
-//
-// let popeluh = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10];
+function Popelushka(name,age,sizeLasty) {
+        this.name = name;
+        this.age = age;
+        this.sizeLasty = sizeLasty;
+}
+p1 = new Popelushka('Name1',21,32)
+p2 = new Popelushka('Name2',22,33)
+p3 = new Popelushka('Name3',23,34)
+p4 = new Popelushka('Name4',24,35)
+p5 = new Popelushka('Name5',25,36)
+p6 = new Popelushka('Name6',26,37)
+p7 = new Popelushka('Name7',27,38)
+p8 = new Popelushka('Name8',28,39)
+p9 = new Popelushka('Name9',29,40)
+p10 = new Popelushka('Name10',10,41)
+
+class Prince{
+    constructor(name,age,sizeMeshta) {
+        this.name = name;
+        this.age = age;
+        this.sizeMeshta = sizeMeshta;
+    }
+}
+prince = new Prince('Oleg', 24, 36);
+
+let massGirl = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10];
 // function search(){
 //         let  i = 0;
-//         while (i<popeluh.length){
-//             let elements = Object.values(popeluh[i]);
+//         while (i<massGirl.length){
+//             let elements = Object.values(massGirl[i]);
 //             i++
-//             if (elements[2] === prince1.sizeMeshta){
-//                 console.log(elements[0] + ' must be with ' + prince1.name)
+//             if (elements[2] === prince.sizeMeshta){
+//                 console.log(elements[0] + ' must be with ' + prince.name)
 //             }
 //         }
 // }
 // search();
 
+function search(){
+    for (let i = 0; i < massGirl.length; i++) {
+        if (prince.sizeMeshta === massGirl[i].sizeLasty){
+            console.log(prince.name + ' must married on ' + massGirl[i].name)
+        }
+    }
+}
+search()
 // Створити обєкт автомобіля з полями:
 //     Марка автомобля, потужність двигуна, власник, ціна, рік випуску.
 //     Власник автомобіля теж має бути обєкт, у якого є поля
@@ -264,28 +272,28 @@
 //     Далі необхідно рати кожну другу машинку (цикл з кроком в 2), та робити їй підвищення потужності двигуна на 10% та ціну на 5%
 // Після того зробити перевірку досвіду ВСІХ наших водіїв. Якщо досвід водія менший за 5 років, але його вік більший за 25, то необідно відправити його на курси підвищення кваліфікації, що збільшить йому досвід на 1 рік.
 //     Також спробуйте порахувати суму, яку потрібно потратити для покупки всіх цих авто в циклі
-class Car{
-    constructor(model, engine, driver, price, year) {
-        this.model = model;
-        this.engine = engine;
-        this.driver = driver;
-        this.price = price;
-        this.year = year;
-    }
-    newSpeed(up){
-        console.log(this.engine * up);
-    }
-    newDriver(driver){
-        this.driver = driver;
-    }
-}
-audi = new Car('Audi', 2.0, {name:'Oleg',age:31,exp:2}, 2000, 1999);
-mercedes = new Car('Mercedes', 2.5, {name:'Petro',age:22,exp:3}, 3000, 2001);
-BMW = new Car('BMW', 2.5, {name:'Vasil',age:28,exp:4}, 3500, 2000);
-GWAgen = new Car('G-WAGEN', 5.0, {name:'Denis',age:24,exp:5}, 6000, 2005);
-ford = new Car('FORD', 2.0, {name:'Mama',age:25,exp:6}, 2500, 2004);
-VW = new Car('VW', 2.0, {name:'Dady',age:26,exp:7}, 6000, 2014);
-nissan = new Car('NISSAN', 2.5, {name:'Steve',age:27,exp:8}, 4500, 2012);
+// class Car{
+//     constructor(model, engine, driver, price, year) {
+//         this.model = model;
+//         this.engine = engine;
+//         this.driver = driver;
+//         this.price = price;
+//         this.year = year;
+//     }
+//     newSpeed(up){
+//         console.log(this.engine * up);
+//     }
+//     newDriver(driver){
+//         this.driver = driver;
+//     }
+// }
+// audi = new Car('Audi', 2.0, {name:'Oleg',age:31,exp:2}, 2000, 1999);
+// mercedes = new Car('Mercedes', 2.5, {name:'Petro',age:22,exp:3}, 3000, 2001);
+// BMW = new Car('BMW', 2.5, {name:'Vasil',age:28,exp:4}, 3500, 2000);
+// GWAgen = new Car('G-WAGEN', 5.0, {name:'Denis',age:24,exp:5}, 6000, 2005);
+// ford = new Car('FORD', 2.0, {name:'Mama',age:25,exp:6}, 2500, 2004);
+// VW = new Car('VW', 2.0, {name:'Dady',age:26,exp:7}, 6000, 2014);
+// nissan = new Car('NISSAN', 2.5, {name:'Steve',age:27,exp:8}, 4500, 2012);
 
 // audi.newSpeed(2)
 // BMW.newSpeed(2)
@@ -296,9 +304,9 @@ nissan = new Car('NISSAN', 2.5, {name:'Steve',age:27,exp:8}, 4500, 2012);
 // GWAgen.newDriver({name:'Name2', age:98,exp:55})
 // VW.newDriver({name:'Name3', age:97, exp:44})
 
-let massCar = [audi,mercedes,BMW,GWAgen,ford,VW,nissan];
+// let massCar = [audi,mercedes,BMW,GWAgen,ford,VW,nissan];
 
-//     Далі необхідно рати кожну другу машинку (цикл з кроком в 2), та робити їй підвищення потужності двигуна на 10% та ціну на 5%
+//Далі необхідно рати кожну другу машинку (цикл з кроком в 2), та робити їй підвищення потужності двигуна на 10% та ціну на 5%
 // function upgrade() {
 //     let i = 0;
 //     while (i <= massCar.length) {
@@ -346,13 +354,13 @@ let massCar = [audi,mercedes,BMW,GWAgen,ford,VW,nissan];
 // price();
 
 //без масиву
-function sumPrice(){
-    let sum = 0;
-    for (let i = 0; i < massCar.length; i++) {
-        // console.log(massCar[i])
-       sum+= massCar[i].price;
-    }
-    console.log(sum)
-}
-
-sumPrice()
+// function sumPrice(){
+//     let sum = 0;
+//     for (let i = 0; i < massCar.length; i++) {
+//         // console.log(massCar[i])
+//        sum+= massCar[i].price;
+//     }
+//     console.log(sum)
+// }
+//
+// sumPrice()
