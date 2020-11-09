@@ -328,18 +328,31 @@ let massCar = [audi,mercedes,BMW,GWAgen,ford,VW,nissan];
 
 
 //     Також спробуйте порахувати суму, яку потрібно потратити для покупки всіх цих авто в циклі
-let massSum = [];
-function price(){
+// з масивом
+// let massSum = [];
+// function price(){
+//     let sum = 0;
+//     for (let car of massCar) {
+//         // console.log(car)
+//         // console.log(car.price)
+//         massSum.push(car.price)
+//         }
+//     // console.log(massSum)
+//     for (let i = 0; i < massSum.length; i++) {
+//        sum+= massSum[i];
+//     }
+//     console.log(sum)
+// }
+// price();
+
+//без масиву
+function sumPrice(){
     let sum = 0;
-    for (let car of massCar) {
-        // console.log(car)
-        // console.log(car.price)
-        massSum.push(car.price)
-        }
-    // console.log(massSum)
-    for (let i = 0; i < massSum.length; i++) {
-       sum+= massSum[i];
+    for (let i = 0; i < massCar.length; i++) {
+        // console.log(massCar[i])
+       sum+= massCar[i].price;
     }
     console.log(sum)
 }
-price();
+
+sumPrice()
